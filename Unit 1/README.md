@@ -90,3 +90,118 @@ syntax: pwd <option>
 ```
 -L : display the content as absolute name
 -P : print fully resolved name for current directory
+```
+### file
+```
+syntax:file <option> <filename>
+```
+#### types of option in file
+```
+-b : to show just the file type
+-i : to view the mime type of a file
+-F : file and file type are seperated by :
+-s : used for special files
+z : to view compressed files without decompressing
+example:to see the file type without filename
+file -b sample.txt
+```
+### more
+```
+syntax: more <filename>
+```
+#### types of option in more
+```
+-d : prompt the user with the message "[press space to continue,q to quit]" and will display "[press h for instructions.]"
+-s : squeeze multiple blank lines into one
+-u : omits the underlines
+-NUM : specify the number of lines per screenful
++NUM : Display file beginning from line number NUM
+example : 
+more sample.txt
+to display man page of ls command page by page.
+man ls|more
+```
+### less
+```
+syntax : less <filename>
+```
+#### types of option in less
+```
+-F : causes less to exit if entire file can be displayed on first screen
+-s : squeeze multiple blank lines into one.
+-u : omits the underlines.
+-n : suppress line number
+example:
+less sample.txt
+man ls|less
+```
+### cat(concatenate)
+```
+syntax:cat<options><filename>
+```
+#### types of option in cat
+```
+-b : add line number to non-blank lines
+-n : add line number to all lines
+-s : suppress repeated empty output lines
+-E : display $ at end of each line
+example: to append content of one file to another 
+cat filename1>>filename2
+```
+## File comparison commands
+###cmp(compare)
+```
+syntax: cmp <options> <filename1> <filename2>
+```
+####types of options in cmp
+```
+-b : displays the differing bytes in the output
+-i : skip a particular number of initial bytes from both the files and then after skipping it compares the files.
+-i SKIP1:SKIP2 : skip the first SKIP1 bytes of File1 and the first SKIP2 bytes of File2
+-l : print byte position and byte value for all differing bytes
+-s : suppress all normal output,print exit statement only.
+-n[no. of bytes] : limit the number of bytes you want to compare
+example: this command compares first 50 bytes
+cmp -n 50 file1 file2
+```
+###diff(difference)
+```
+syntax: diff [options] <filename1> <filenam2>
+```
+####types of options in diff
+```
+-i : ignore case differences in file contents
+-b : ignore changes in amount of white space
+-w : ignore all white spaces
+-q : prompt when two files are differ
+-s : report when two files are the same
+```
+#### two different ways to view diff command
+```
+* Context mode(-c) 
+* Unified mode(-u)
+```
+###comm(compare two sorted files line by line)
+```
+syntax : comm<options> <file1> <file2>
+```
+#### types of option in comm
+```
+-1 : suppress column 1
+-2 : suppress column 2
+-3 : suppress column 3
+example: this cmd suppresses column 1
+comm -1 file1 file2
+```
+### uniq
+```
+syntax : uniq [option] <filename>
+```
+####types of options in uniq
+```
+-d : displays only the duplicate lines
+-u : displays only unique lines
+-i : case-sensitive comparisons
+-c : displays line by eliminating duplicate lines and prefix lines with a number representing how many times they occured.
+-w : only compares N characters in a line 
+```
