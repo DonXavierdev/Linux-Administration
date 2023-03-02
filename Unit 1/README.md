@@ -166,7 +166,7 @@ cmp -n 50 file1 file2
 ```
 ###diff(difference)
 ```
-syntax: diff [options] <filename1> <filenam2>
+syntax : diff [options] <filename1> <filenam2>
 ```
 ####types of options in diff
 ```
