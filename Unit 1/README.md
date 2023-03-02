@@ -14,7 +14,7 @@ cd ~/Documents
 ###man command
 ```
 this command is used to display the man page entry that explains a given command
-syntax : man <commandname>
+syntax : man <command name>
 example: man ls
 ```
 ### ls command (list the content)
